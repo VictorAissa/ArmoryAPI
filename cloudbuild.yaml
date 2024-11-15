@@ -1,0 +1,11 @@
+steps:
+  # Étape 1 : Build avec Maven
+  - name: 'gcr.io/cloud-builders/mvn'
+    args: ['clean', 'package']
+
+  # Étape 2 : Construire l'image Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-api', '.']
+
+images:
+  - 'gcr.io/$PROJECT_ID/my-api'
