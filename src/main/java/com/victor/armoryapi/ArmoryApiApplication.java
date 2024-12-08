@@ -18,7 +18,6 @@ public class ArmoryApiApplication {
 
     @PostConstruct
     public void init() {
-        System.out.println("Initializing Armory API : TEST CHANGES");
         try (InputStream input = new FileInputStream("local.env")) {
             Properties prop = new Properties();
             prop.load(input);
